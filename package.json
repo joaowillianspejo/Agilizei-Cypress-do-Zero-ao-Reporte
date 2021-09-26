@@ -1,0 +1,18 @@
+{
+  "name": "agilizei-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --env allure=true",
+    "allure:generate": "allure generate allure-results",
+    "allure:open": "allure open allure-report",
+    "allure:clear": "rm -r allure-results/ allure-report/ cypress/videos || true",
+    "test": "npx npm-run-all allure:clear cy:run allure:generate"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.17.1",
+    "cypress": "^8.4.1"
+  }
+}
